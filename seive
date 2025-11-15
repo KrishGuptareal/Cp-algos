@@ -1,0 +1,17 @@
+void seive(vector<int> &v)
+{
+    vector<bool> is_prime(M + 1, true);
+    is_prime[0] = is_prime[1] = false; // 0 and 1 are not prime
+
+    for (int i = 2; i <= M; i++)
+    {
+        if (is_prime[i])
+        {
+            v.pb(i);
+            for (int j = 2 * i; j <= M; j += i)
+                is_prime[j] = false;
+        }
+    }
+
+    // Printing the prime numbers
+}
